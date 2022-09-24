@@ -14,7 +14,7 @@ class ApiController extends Controller
         $response = [
             'success' => true,
             'data'    => null,
-            'message' => "Welcome to Estatio!, Today is $timeOfDay",
+            'message' => "Welcome to Estatio!, Today is $timeOfDay [API VERSION:1.0]",
         ];
 
 
