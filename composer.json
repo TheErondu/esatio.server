@@ -48,6 +48,11 @@
         ],
         "post-create-project-cmd": [
             "@/usr/local/bin/php artisan key:generate --ansi"
+        ],
+        "warmup": [
+            "php artisan config:cache",
+            "php artisan route:cache"
+
         ]
     },
     "extra": {
