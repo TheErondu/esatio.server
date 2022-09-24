@@ -12,7 +12,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('build/assets/app.css')}}">
+    <link href="{{env('APP_URL')}}/build/assets/app.css" rel="stylesheet">
+
+    <!-- Scripts -->
 
 </head>
 <body>
@@ -76,5 +78,5 @@
         </main>
     </div>
 </body>
-<script src="{{asset('build/assets/app.js')}}"></script>
+<script src="{{env('APP_URL')}}/build/assets/app.js"></script>
 </html>
