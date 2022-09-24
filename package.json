@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm install",
+        "build": "npm install"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.10.2",
+        "axios": "^0.27",
+        "bootstrap": "^5.2.1"
+    }
+}
