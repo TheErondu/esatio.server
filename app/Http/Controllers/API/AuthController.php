@@ -46,13 +46,18 @@ class AuthController extends ApiController
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')->plainTextToken;
+            $success['token'] =  $user->createToken('estatio_user_token')->plainTextToken;
             $success['name'] =  $user->name;
 
             return $this->sendResponse($success, 'User login successfully.');
         }
         else{
-            return $this->sendError('Unauthorised.', ['error'=>'Unauthorised']);
+            return $this->sendError('Incorrect credentials!', ['error'=>'Incorrect credentials!'],200);
         }
+    }
+    public function logout(Request $request) {
+        $request->user()->currentAccessToken()->delete();
+
+        return $this->sendResponse('User logged out successfully.',200);
     }
 }

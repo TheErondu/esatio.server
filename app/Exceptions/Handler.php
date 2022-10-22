@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Auth\AuthenticationException;
 
 class Handler extends ExceptionHandler
 {
@@ -36,6 +37,23 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
+    public function sendError($error, $errorMessages = [], $code = 404)
+    {
+        $response = [
+            'success' => false,
+            'message' => $error,
+        ];
+
+
+        if (!empty($errorMessages)) {
+            $response['data'] = $errorMessages;
+        }
+
+
+        return response()->json($response, $code);
+    }
+
+
     /**
      * Register the exception handling callbacks for the application.
      *
@@ -47,4 +65,14 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    protected function unauthenticated($request, AuthenticationException $exception)
+{
+    if ($request->expectsJson()) {
+
+        return $this->sendError('Unauthorized: token Expired or invalid!', null,401);
+    }
+
+    return redirect()->guest('login');
+}
+
 }
