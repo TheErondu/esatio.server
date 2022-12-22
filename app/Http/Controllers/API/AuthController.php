@@ -49,15 +49,16 @@ class AuthController extends ApiController
             $success['token'] =  $user->createToken('estatio_user_token')->plainTextToken;
             $success['name'] =  $user->name;
 
-            return $this->sendResponse($success, 'User login successfully.');
+            return $this->sendResponse($success, 'User logged in successfully.');
         }
         else{
             return $this->sendError('Incorrect credentials!', ['error'=>'Incorrect credentials!'],200);
         }
     }
-    public function logout(Request $request) {
-        $request->user()->currentAccessToken()->delete();
-
-        return $this->sendResponse('User logged out successfully.',200);
+    public function logout() {
+        auth()->user()->tokens->each(function ($token, $key) {
+            $token->delete();
+        });
+        return $this->sendResponse(null,"User logged out successfully.",200);
     }
 }
