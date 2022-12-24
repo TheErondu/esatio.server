@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',[\App\Http\Controllers\API\ApiController::class, 'index']);
-Route::post('artisan', [\App\Http\Controllers\API\ArtisanController::class, 'run'])->name('artisan');
+Route::post('artisan/run', [\App\Http\Controllers\API\ArtisanController::class, 'run'])->name('artisan');
 Route::controller(AuthController::class)->group(function(){
     Route::post('register', 'register');
     Route::post('login', 'login');
@@ -22,6 +22,7 @@ Route::controller(AuthController::class)->group(function(){
 Route::group(["middleware" => ["auth:sanctum"]], function(){
 
     Route::get('user', [App\Http\Controllers\API\UserController::class, 'userInfo'])->name('userInfo');
+    Route::post('notifications/push/token/store', [App\Http\Controllers\API\PushNotificationController::class, 'storeToken'])->name('store.token');
     Route::get('user/logout', [App\Http\Controllers\API\AuthController::class, 'logout']);
 
  });

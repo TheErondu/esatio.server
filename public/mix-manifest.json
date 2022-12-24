@@ -1,8 +1,8 @@
 {
-    "/js/app.js": "/js/app.js?id=fecc438096215b9472f6a5e01b4085bd",
-    "/css/app.css": "/css/app.css?id=327dcc58e4c5f4f8f8c3b77fae8a1d52",
-    "/css/tailwind.css": "/css/tailwind.css?id=a7c759ed9c6fb6369f0de46a3c207a93",
-    "/css/pages/auth.css": "/css/pages/auth.css?id=fefa57dcb492eaffae98f6a61006dba0",
-    "/css/app-dark.css": "/css/app-dark.css?id=e2bc6ae75faeb9dd32f1eed54dcd27c7",
-    "/css/bootstrap.css": "/css/bootstrap.css?id=838b3f5c7d74a7eb76420507a5332751"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/tailwind.css": "/css/tailwind.css",
+    "/css/pages/auth.css": "/css/pages/auth.css",
+    "/css/app-dark.css": "/css/app-dark.css",
+    "/css/bootstrap.css": "/css/bootstrap.css"
 }

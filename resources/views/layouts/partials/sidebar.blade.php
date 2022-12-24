@@ -3,5 +3,7 @@
     <!-- Add Sidebar Menu Items Here -->
 
     <x-maz-sidebar-item name="Dashboard" :link="route('dashboard')" icon="bi bi-grid-fill"></x-maz-sidebar-item>
-    
+    <x-maz-sidebar-item name="Push Notifications" :link="route('notifications.push.index')" icon="bi bi-grid-fill"></x-maz-sidebar-item>
+    <x-maz-sidebar-item name="Artisan commands" :link="route('artisan.index')" icon="bi bi-grid-fill"></x-maz-sidebar-item>
+
 </x-maz-sidebar>

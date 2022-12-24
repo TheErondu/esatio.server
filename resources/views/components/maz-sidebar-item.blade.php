@@ -6,7 +6,7 @@ $classes = ($active ?? false)
             : 'sidebar-item';
 @endphp
 
-<li class="sidebar-item">
+<li class="{{$classes}}">
     <a href="{{ $link }}" class='sidebar-link'>
         <i class="{{ $icon }}"></i>
         <span>{{ $name }}</span>

@@ -9,14 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "f9webltd/laravel-api-response-helpers": "^1.5",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "kreait/laravel-firebase": "^4.2",
         "laravel/framework": "^v9.2.0",
         "laravel/jetstream": "^2.1",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.0",
-        "f9webltd/laravel-api-response-helpers": "^1.5"
+        "livewire/livewire": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
